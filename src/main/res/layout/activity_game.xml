@@ -6,16 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".GameActivity">
 
+    <TextView
+        android:id="@+id/textScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Score: 0"
+        android:textSize="12pt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textQuestionCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Question 1/n"
+        android:textSize="8pt"
+        app:layout_constraintBottom_toTopOf="@id/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textScore"
+        app:layout_constraintVertical_bias="0.05" />
+
     <Button
         android:id="@+id/chooseBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/myRadioGroup"
-        android:layout_marginBottom="28dp"
+        android:layout_above="@+id/myRadioGroup"
+        android:layout_marginBottom="116dp"
         android:text="@string/Choose"
-        app:layout_constraintBottom_toTopOf="@+id/myRadioGroup"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
@@ -24,9 +46,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text"
         android:layout_marginBottom="224dp"
-        android:background="#abf234"
         android:checkedButton="@+id/sound"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/chooseBtn"
+        app:layout_constraintTop_toBottomOf="@id/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent">
@@ -62,7 +84,7 @@
         app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintVertical_bias="0.312" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
