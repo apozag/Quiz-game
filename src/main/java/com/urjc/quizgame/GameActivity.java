@@ -28,7 +28,6 @@ public class GameActivity extends AppCompatActivity {
     private TextView questionCount;
     private TextView scoreText;
     private Button chooseBtn;
-    private Button nextBtn;
 
     private Question currentQuestion;
 
@@ -85,17 +84,19 @@ public class GameActivity extends AppCompatActivity {
         score = 0;
 
         chooseBtn = (Button)findViewById(R.id.chooseBtn);
-        nextBtn = (Button)findViewById(R.id.nextBtn);
 
         chooseBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(v.getContext(), "choose", Toast.LENGTH_LONG);
-
                 if(radioGroup.isEnabled()) {
-                    int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                    int radioButtonID = radioGroup.getCheckedRadioButtonId();
+                    View radioButton = radioGroup.findViewById(radioButtonID);
+                    int selectedId = radioGroup.indexOfChild(radioButton);
+
+                    System.out.println(selectedId);
 
                     if (selectedId != currentQuestion.getAnswer()) {
                         //fallo
@@ -134,26 +135,23 @@ public class GameActivity extends AppCompatActivity {
                     }
 
                     radioGroup.setEnabled(false);
+
+                    chooseBtn.setText("Next");
                 }
-
-            }
-        });
-
-        nextBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Toast.makeText(v.getContext(), "next", Toast.LENGTH_LONG);
-
-                //Siguiente pregunta
-                if(currentQuestion.getId() <= questions.size()-2)
-                    changeQuestion(currentQuestion.getId() + 1);
                 else{
-                    Intent intent = new Intent(v.getContext(), ScoreActivity.class);
-                    intent.putExtra("SCORE", score);
-                    startActivity(intent);
+                    //Siguiente pregunta
+                    if(currentQuestion.getId() <= questions.size()-2)
+                        changeQuestion(currentQuestion.getId() + 1);
+                    else{
+                        Intent intent = new Intent(v.getContext(), ScoreActivity.class);
+                        intent.putExtra("SCORE", score);
+                        startActivity(intent);
+                    }
                 }
+
             }
         });
+
 
         changeQuestion(0);
     }
@@ -161,6 +159,8 @@ public class GameActivity extends AppCompatActivity {
     private void changeQuestion(int pos){
 
         radioGroup.setEnabled(true);
+
+        chooseBtn.setText("Choose");
 
         currentQuestion = questions.get(pos);
 
@@ -174,6 +174,11 @@ public class GameActivity extends AppCompatActivity {
         radioBtn2.setText(currentQuestion.getOption(1));
         radioBtn3.setText(currentQuestion.getOption(2));
         radioBtn4.setText(currentQuestion.getOption(3));
+
+        radioBtn1.setBackgroundColor(0x00000000);
+        radioBtn2.setBackgroundColor(0x00000000);
+        radioBtn3.setBackgroundColor(0x00000000);
+        radioBtn4.setBackgroundColor(0x00000000);
     }
 
 
