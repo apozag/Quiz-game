@@ -17,7 +17,7 @@ import java.util.Arrays;
 
 public class GameActivity extends AppCompatActivity {
 
-    private int score = 0;
+    //private int score = 0;
     private ArrayList<Question> questions = new ArrayList<>();
     private RadioGroup radioGroup;
     private RadioButton radioBtn1;
@@ -81,7 +81,7 @@ public class GameActivity extends AppCompatActivity {
         question = (TextView) findViewById(R.id.question);
         questionCount = (TextView) findViewById(R.id.textQuestionCount);
         scoreText= (TextView)findViewById(R.id.textScore);
-        score = 0;
+        MainActivity.score = 0;
 
         chooseBtn = (Button)findViewById(R.id.chooseBtn);
 
@@ -100,6 +100,7 @@ public class GameActivity extends AppCompatActivity {
 
                     if (selectedId != currentQuestion.getAnswer()) {
                         //fallo
+                        System.out.println("Fallo");
                         switch (selectedId) {
                             case 0:
                                 radioBtn1.setBackgroundColor(Color.RED);
@@ -116,6 +117,7 @@ public class GameActivity extends AppCompatActivity {
                         }
                     } else {
                         //acierto
+                        System.out.println("Acierto");
                         switch (selectedId) {
                             case 0:
                                 radioBtn1.setBackgroundColor(Color.GREEN);
@@ -130,8 +132,9 @@ public class GameActivity extends AppCompatActivity {
                                 radioBtn4.setBackgroundColor(Color.GREEN);
                                 break;
                         }
-                        score += 1;
-                        scoreText.setText("Score: " + score);
+                        MainActivity.score = MainActivity.score + 1;
+                        System.out.println("Score" + MainActivity.score);
+                        scoreText.setText("Score: " + MainActivity.score);
                     }
 
                     radioGroup.setEnabled(false);
@@ -147,8 +150,8 @@ public class GameActivity extends AppCompatActivity {
                         intent.putExtra("SCORE", score);
                         startActivity(intent);
                     }
-                }
 
+                }
             }
         });
 
