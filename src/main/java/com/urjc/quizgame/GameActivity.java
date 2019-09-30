@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -90,43 +91,49 @@ public class GameActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                int selectedId = radioGroup.getCheckedRadioButtonId();
 
-                if(selectedId != currentQuestion.getAnswer()){
-                    //fallo
-                    switch(selectedId){
-                        case 0:
-                            radioBtn1.setBackgroundColor(Color.RED);
-                            break;
-                        case 1:
-                            radioBtn2.setBackgroundColor(Color.RED);
-                            break;
-                        case 2:
-                            radioBtn3.setBackgroundColor(Color.RED);
-                            break;
-                        case 3:
-                            radioBtn4.setBackgroundColor(Color.RED);
-                            break;
+                Toast.makeText(v.getContext(), "choose", Toast.LENGTH_LONG);
+
+                if(radioGroup.isEnabled()) {
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                    if (selectedId != currentQuestion.getAnswer()) {
+                        //fallo
+                        switch (selectedId) {
+                            case 0:
+                                radioBtn1.setBackgroundColor(Color.RED);
+                                break;
+                            case 1:
+                                radioBtn2.setBackgroundColor(Color.RED);
+                                break;
+                            case 2:
+                                radioBtn3.setBackgroundColor(Color.RED);
+                                break;
+                            case 3:
+                                radioBtn4.setBackgroundColor(Color.RED);
+                                break;
+                        }
+                    } else {
+                        //acierto
+                        switch (selectedId) {
+                            case 0:
+                                radioBtn1.setBackgroundColor(Color.GREEN);
+                                break;
+                            case 1:
+                                radioBtn2.setBackgroundColor(Color.GREEN);
+                                break;
+                            case 2:
+                                radioBtn3.setBackgroundColor(Color.GREEN);
+                                break;
+                            case 3:
+                                radioBtn4.setBackgroundColor(Color.GREEN);
+                                break;
+                        }
+                        score += 1;
+                        scoreText.setText("Score: " + score);
                     }
-                }
-                else{
-                    //acierto
-                    switch(selectedId){
-                        case 0:
-                            radioBtn1.setBackgroundColor(Color.GREEN);
-                            break;
-                        case 1:
-                            radioBtn2.setBackgroundColor(Color.GREEN);
-                            break;
-                        case 2:
-                            radioBtn3.setBackgroundColor(Color.GREEN);
-                            break;
-                        case 3:
-                            radioBtn4.setBackgroundColor(Color.GREEN);
-                            break;
-                    }
-                    score += 1;
-                    scoreText.setText("Score: " + score);
+
+                    radioGroup.setEnabled(false);
                 }
 
             }
@@ -135,12 +142,14 @@ public class GameActivity extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                Toast.makeText(v.getContext(), "next", Toast.LENGTH_LONG);
 
                 //Siguiente pregunta
                 if(currentQuestion.getId() <= questions.size()-2)
                     changeQuestion(currentQuestion.getId() + 1);
                 else{
-                    Intent intent= new Intent(v.getContext(), MainActivity.class);
+                    Intent intent = new Intent(v.getContext(), ScoreActivity.class);
+                    intent.putExtra("SCORE", score);
                     startActivity(intent);
                 }
             }
@@ -150,6 +159,9 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void changeQuestion(int pos){
+
+        radioGroup.setEnabled(true);
+
         currentQuestion = questions.get(pos);
 
         radioGroup.clearCheck();
