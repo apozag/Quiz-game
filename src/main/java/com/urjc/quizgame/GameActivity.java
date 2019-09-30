@@ -17,7 +17,7 @@ import java.util.Arrays;
 
 public class GameActivity extends AppCompatActivity {
 
-    private int score = 0;
+    private int score;
     private ArrayList<Question> questions = new ArrayList<>();
     private RadioGroup radioGroup;
     private RadioButton radioBtn1;

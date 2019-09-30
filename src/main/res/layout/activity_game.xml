@@ -42,7 +42,7 @@
 
     <RadioGroup
         android:id="@+id/myRadioGroup"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/question"
         android:layout_marginBottom="224dp"
@@ -55,25 +55,25 @@
 
         <RadioButton
             android:id="@+id/radioBtn1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Sound" />
 
         <RadioButton
             android:id="@+id/radioBtn2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Vibration" />
 
         <RadioButton
             android:id="@+id/radioBtn3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Silent" />
 
         <RadioButton
             android:id="@+id/radioBtn4"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Silent" />
 
