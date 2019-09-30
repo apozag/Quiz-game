@@ -20,12 +20,11 @@ public class ScoreActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        System.out.println("Score" + MainActivity.score);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
-        //((TextView)findViewById(R.id.score)).setText(getIntent().getStringExtra("SCORE"));
-        ((TextView)findViewById(R.id.score)).setText("" + MainActivity.score);
+        ((TextView)findViewById(R.id.score)).setText(getIntent().getStringExtra("SCORE"));
+
 
         menuBtn = findViewById(R.id.menuBtn);
 
