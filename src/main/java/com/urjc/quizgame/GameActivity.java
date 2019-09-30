@@ -92,7 +92,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(v.getContext(), "choose", Toast.LENGTH_LONG).show();
+                Toast.makeText(v.getContext(), "choose", Toast.LENGTH_SHORT).show();
                 System.out.println("Choose");
 
 
@@ -148,7 +148,7 @@ public class GameActivity extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(v.getContext(), "next", Toast.LENGTH_LONG).show();
+                Toast.makeText(v.getContext(), "next", Toast.LENGTH_SHORT).show();
                 System.out.println("Next");
 
                 //Siguiente pregunta

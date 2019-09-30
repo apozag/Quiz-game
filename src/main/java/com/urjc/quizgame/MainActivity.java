@@ -10,13 +10,17 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static int score = 3;
-    private int highScore = 0;
+    private int highScore;
+    private boolean newGame = true;
     private TextView HighscoreText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (highScore<score){
+        if (newGame){
+            this.highScore = 0;
+            this.newGame = false;
+        } else if (highScore < score){
             this.highScore = score;
         }
         HighscoreText = findViewById(R.id.textHighscore);
