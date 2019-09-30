@@ -17,7 +17,7 @@ import java.util.Arrays;
 
 public class GameActivity extends AppCompatActivity {
 
-    private int score = 0;
+    //private int score = 0;
     private ArrayList<Question> questions = new ArrayList<>();
     private RadioGroup radioGroup;
     private RadioButton radioBtn1;
@@ -82,7 +82,7 @@ public class GameActivity extends AppCompatActivity {
         question = (TextView) findViewById(R.id.question);
         questionCount = (TextView) findViewById(R.id.textQuestionCount);
         scoreText= (TextView)findViewById(R.id.textScore);
-        score = 0;
+        MainActivity.score = 0;
 
         chooseBtn = (Button)findViewById(R.id.chooseBtn);
         nextBtn = (Button)findViewById(R.id.nextBtn);
@@ -92,13 +92,17 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(v.getContext(), "choose", Toast.LENGTH_LONG);
+                Toast.makeText(v.getContext(), "choose", Toast.LENGTH_LONG).show();
+                System.out.println("Choose");
+
 
                 if(radioGroup.isEnabled()) {
                     int selectedId = radioGroup.getCheckedRadioButtonId();
-
+                    System.out.println("Selection: " + selectedId);
+                    System.out.println("Answer: " + currentQuestion.getAnswer());
                     if (selectedId != currentQuestion.getAnswer()) {
                         //fallo
+                        System.out.println("Fallo");
                         switch (selectedId) {
                             case 0:
                                 radioBtn1.setBackgroundColor(Color.RED);
@@ -115,6 +119,7 @@ public class GameActivity extends AppCompatActivity {
                         }
                     } else {
                         //acierto
+                        System.out.println("Acierto");
                         switch (selectedId) {
                             case 0:
                                 radioBtn1.setBackgroundColor(Color.GREEN);
@@ -129,8 +134,9 @@ public class GameActivity extends AppCompatActivity {
                                 radioBtn4.setBackgroundColor(Color.GREEN);
                                 break;
                         }
-                        score += 1;
-                        scoreText.setText("Score: " + score);
+                        MainActivity.score = MainActivity.score + 1;
+                        System.out.println("Score" + MainActivity.score);
+                        scoreText.setText("Score: " + MainActivity.score);
                     }
 
                     radioGroup.setEnabled(false);
@@ -142,14 +148,15 @@ public class GameActivity extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(v.getContext(), "next", Toast.LENGTH_LONG);
+                Toast.makeText(v.getContext(), "next", Toast.LENGTH_LONG).show();
+                System.out.println("Next");
 
                 //Siguiente pregunta
                 if(currentQuestion.getId() <= questions.size()-2)
                     changeQuestion(currentQuestion.getId() + 1);
                 else{
                     Intent intent = new Intent(v.getContext(), ScoreActivity.class);
-                    intent.putExtra("SCORE", score);
+                    intent.putExtra("SCORE", MainActivity.score);
                     startActivity(intent);
                 }
             }
