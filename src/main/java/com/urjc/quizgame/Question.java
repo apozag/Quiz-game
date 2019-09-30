@@ -37,6 +37,8 @@ public class Question {
         return options;
     }
 
+    public String getOption(int pos){return options.get(pos);}
+
     public void setOptions(ArrayList<String> options) {
         this.options = options;
     }
