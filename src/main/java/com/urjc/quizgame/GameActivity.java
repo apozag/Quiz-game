@@ -38,20 +38,59 @@ public class GameActivity extends AppCompatActivity {
 
         //Configuración de las preguntas
 
-        String a1[] = {"a", "b", "c", "d"};
-        Question q1 = new Question(0, "Pregunta 1", new ArrayList<>(Arrays.asList(a1)), 1);
+        Question q1, q2, q3, q4, q5;
+        q1 = q2 = q3 = q4 = q5 = new Question();
 
-        String a2[] = {"e", "f", "g", "h"};
-        Question q2 = new Question(1, "Pregunta 2", new ArrayList<>(Arrays.asList(a2)), 1);
+        switch(getIntent().getStringExtra("MODE")) {
+            case "Música":
+                String a1m[] = {"a", "b", "c", "d"};
+                q1 = new Question(0, "Pregunta 1 m", new ArrayList<>(Arrays.asList(a1m)), 1);
 
-        String a3[] = {"i", "j", "k", "l"};
-        Question q3 = new Question(2, "Pregunta 3", new ArrayList<>(Arrays.asList(a3)), 1);
+                String a2m[] = {"e", "f", "g", "h"};
+                q2 = new Question(1, "Pregunta 2 m", new ArrayList<>(Arrays.asList(a2m)), 1);
 
-        String a4[] = {"m", "n", "ñ", "o"};
-        Question q4 = new Question(3, "Pregunta 4", new ArrayList<>(Arrays.asList(a4)), 1);
+                String a3m[] = {"i", "j", "k", "l"};
+                q3 = new Question(2, "Pregunta 3 m", new ArrayList<>(Arrays.asList(a3m)), 1);
 
-        String a5[] = {"o", "p", "q", "r"};
-        Question q5 = new Question(4, "Pregunta 5", new ArrayList<>(Arrays.asList(a5)), 1);
+                String a4m[] = {"m", "n", "ñ", "o"};
+                q4 = new Question(3, "Pregunta 4 m", new ArrayList<>(Arrays.asList(a4m)), 1);
+
+                String a5m[] = {"o", "p", "q", "r"};
+                q5 = new Question(4, "Pregunta 5 m", new ArrayList<>(Arrays.asList(a5m)), 1);
+            break;
+            case"Cine":
+                String a1c[] = {"a", "b", "c", "d"};
+                q1 = new Question(0, "Pregunta 1 c", new ArrayList<>(Arrays.asList(a1c)), 1);
+
+                String a2c[] = {"e", "f", "g", "h"};
+                q2 = new Question(1, "Pregunta 2 c", new ArrayList<>(Arrays.asList(a2c)), 1);
+
+                String a3c[] = {"i", "j", "k", "l"};
+                q3 = new Question(2, "Pregunta 3 c", new ArrayList<>(Arrays.asList(a3c)), 1);
+
+                String a4c[] = {"m", "n", "ñ", "o"};
+                q4 = new Question(3, "Pregunta 4 c", new ArrayList<>(Arrays.asList(a4c)), 1);
+
+                String a5c[] = {"o", "p", "q", "r"};
+                q5 = new Question(4, "Pregunta 5 c", new ArrayList<>(Arrays.asList(a5c)), 1);
+                break;
+            case "Historia":
+                String a1h[] = {"a", "b", "c", "d"};
+                q1 = new Question(0, "Pregunta 1 h", new ArrayList<>(Arrays.asList(a1h)), 1);
+
+                String a2h[] = {"e", "f", "g", "h"};
+                q2 = new Question(1, "Pregunta 2 h", new ArrayList<>(Arrays.asList(a2h)), 1);
+
+                String a3h[] = {"i", "j", "k", "l"};
+                q3 = new Question(2, "Pregunta 3 h", new ArrayList<>(Arrays.asList(a3h)), 1);
+
+                String a4h[] = {"m", "n", "ñ", "o"};
+                q4 = new Question(3, "Pregunta 4 h", new ArrayList<>(Arrays.asList(a4h)), 1);
+
+                String a5h[] = {"o", "p", "q", "r"};
+                q5 = new Question(4, "Pregunta 5 h", new ArrayList<>(Arrays.asList(a5h)), 1);
+
+        }
 
         questions.add(q1);
         questions.add(q2);
