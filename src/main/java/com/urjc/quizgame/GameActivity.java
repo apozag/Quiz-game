@@ -43,53 +43,53 @@ public class GameActivity extends AppCompatActivity {
 
         switch(getIntent().getStringExtra("MODE")) {
             case "Música":
-                String a1m[] = {"a", "b", "c", "d"};
-                q1 = new Question(0, "Pregunta 1 m", new ArrayList<>(Arrays.asList(a1m)), 1);
+                String a1m[] = {"5 líneas y 4 espacios", "5 líneas y 5 espacios", "5 líneas y 6 espacios", "4 líneas y 5 espacios"};
+                q1 = new Question(0, "¿Cuántas líneas y espacios tiene un pentagrama?", new ArrayList<>(Arrays.asList(a1m)), 0);
 
-                String a2m[] = {"e", "f", "g", "h"};
-                q2 = new Question(1, "Pregunta 2 m", new ArrayList<>(Arrays.asList(a2m)), 1);
+                String a2m[] = {"Nueva York", "Philadelphia", "Chicago", "Nueva Orleans"};
+                q2 = new Question(1, "¿En qué ciudad se originó el Jazz?", new ArrayList<>(Arrays.asList(a2m)), 3);
 
-                String a3m[] = {"i", "j", "k", "l"};
-                q3 = new Question(2, "Pregunta 3 m", new ArrayList<>(Arrays.asList(a3m)), 1);
+                String a3m[] = {"4", "2", "8", "3"};
+                q3 = new Question(2, "¿A cuántas semicorcheas equivale una blanca?", new ArrayList<>(Arrays.asList(a3m)), 2);
 
-                String a4m[] = {"m", "n", "ñ", "o"};
-                q4 = new Question(3, "Pregunta 4 m", new ArrayList<>(Arrays.asList(a4m)), 1);
+                String a4m[] = {"4", "2", "8", "6"};
+                q4 = new Question(3, "¿A cuántas negras equivale una redonda?", new ArrayList<>(Arrays.asList(a4m)), 0);
 
-                String a5m[] = {"o", "p", "q", "r"};
-                q5 = new Question(4, "Pregunta 5 m", new ArrayList<>(Arrays.asList(a5m)), 1);
-            break;
+                String a5m[] = {"saxofón", "trompeta", "flauta travesera", "fagot"};
+                q5 = new Question(4, "¿Cuál de estos instrumentos no es de viento-madera?", new ArrayList<>(Arrays.asList(a5m)), 1);
+                break;
             case"Cine":
-                String a1c[] = {"a", "b", "c", "d"};
-                q1 = new Question(0, "Pregunta 1 c", new ArrayList<>(Arrays.asList(a1c)), 1);
+                String a1c[] = {"Champiñón", "Calavera", "Caimán", "Prohibida"};
+                q1 = new Question(0, "¿Cómo se llama la isla en la que vive King Kong?", new ArrayList<>(Arrays.asList(a1c)), 1);
 
-                String a2c[] = {"e", "f", "g", "h"};
-                q2 = new Question(1, "Pregunta 2 c", new ArrayList<>(Arrays.asList(a2c)), 1);
+                String a2c[] = {"coche", "barco", "tren", "avión"};
+                q2 = new Question(1, "¿Qué transporte es popular por ser filmado por los hermanos Lumière?", new ArrayList<>(Arrays.asList(a2c)), 2);
 
-                String a3c[] = {"i", "j", "k", "l"};
-                q3 = new Question(2, "Pregunta 3 c", new ArrayList<>(Arrays.asList(a3c)), 1);
+                String a3c[] = {"Shrek", "Monsters Inc.", "Toy Story", "El Viaje de Chihiro"};
+                q3 = new Question(2, "¿Cual de estas ganó el primer Óscar a mejor película de animación?", new ArrayList<>(Arrays.asList(a3c)), 0);
 
-                String a4c[] = {"m", "n", "ñ", "o"};
-                q4 = new Question(3, "Pregunta 4 c", new ArrayList<>(Arrays.asList(a4c)), 1);
+                String a4c[] = {"Teresa", "Amalia", "Ofelia", "Yolanda"};
+                q4 = new Question(3, "¿Cual era el nombre de la protagonista del Laberinto del Fauno?", new ArrayList<>(Arrays.asList(a4c)), 2);
 
-                String a5c[] = {"o", "p", "q", "r"};
-                q5 = new Question(4, "Pregunta 5 c", new ArrayList<>(Arrays.asList(a5c)), 1);
+                String a5c[] = {"Paprika", "Perfect Blue", "Tokyo Godfathers", "La Tumba de las Luciérnagas"};
+                q5 = new Question(4, "¿Cual de estas películas no pertenece a Satoshi Kon?", new ArrayList<>(Arrays.asList(a5c)), 3);
                 break;
             case "Historia":
-                String a1h[] = {"a", "b", "c", "d"};
-                q1 = new Question(0, "Pregunta 1 h", new ArrayList<>(Arrays.asList(a1h)), 1);
+                String a1h[] = {"1512", "1502", "1482", "1492"};
+                q1 = new Question(0, "En qué año descubrió Colón América", new ArrayList<>(Arrays.asList(a1h)), 3);
 
-                String a2h[] = {"e", "f", "g", "h"};
-                q2 = new Question(1, "Pregunta 2 h", new ArrayList<>(Arrays.asList(a2h)), 1);
+                String a2h[] = {"Champiñón", "Cerdeña", "Córcega", "Santa Elena"};
+                q2 = new Question(1, "¿En qué Isla murió Napoleón?", new ArrayList<>(Arrays.asList(a2h)), 3);
 
-                String a3h[] = {"i", "j", "k", "l"};
-                q3 = new Question(2, "Pregunta 3 h", new ArrayList<>(Arrays.asList(a3h)), 1);
+                String a3h[] = {"Quito", "Cuzco", "Machu Pichu", "Lima"};
+                q3 = new Question(2, "¿Cuál era la capital del imperio Inca?", new ArrayList<>(Arrays.asList(a3h)), 1);
 
-                String a4h[] = {"m", "n", "ñ", "o"};
-                q4 = new Question(3, "Pregunta 4 h", new ArrayList<>(Arrays.asList(a4h)), 1);
+                String a4h[] = {"1812", "1820", "1814", "1802"};
+                q4 = new Question(3, "De qué año es la primera Constitución española?", new ArrayList<>(Arrays.asList(a4h)), 0);
 
-                String a5h[] = {"o", "p", "q", "r"};
-                q5 = new Question(4, "Pregunta 5 h", new ArrayList<>(Arrays.asList(a5h)), 1);
-
+                String a5h[] = {"griegos y espartacos", "romanos y cartagineses", "griegos y persas", "griegos y egipcios"};
+                q5 = new Question(4, "¿Quiénes lucharon en la batalla de la maraton?", new ArrayList<>(Arrays.asList(a5h)), 2);
+                break;
         }
 
         questions.add(q1);
