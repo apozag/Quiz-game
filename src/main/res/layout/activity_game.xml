@@ -40,18 +40,30 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/myRadioGroup"
+        app:layout_constraintEnd_toEndOf="@+id/myRadioGroup"
+        app:layout_constraintStart_toStartOf="@+id/myRadioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/question"
+        app:layout_constraintVertical_bias="0.2"
+         />
+
     <RadioGroup
         android:id="@+id/myRadioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="381dp"
+        android:layout_height="131dp"
         android:layout_below="@+id/question"
-        android:layout_marginBottom="224dp"
+        android:layout_marginBottom="0.5pt"
         android:checkedButton="@+id/sound"
         app:layout_constraintBottom_toTopOf="@id/chooseBtn"
-        app:layout_constraintTop_toBottomOf="@id/question"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/question">
 
         <RadioButton
             android:id="@+id/radioBtn1"
