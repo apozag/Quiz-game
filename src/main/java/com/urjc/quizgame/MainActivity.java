@@ -32,6 +32,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.settingsBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v){
+                Intent intent = new Intent(v.getContext(), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.rankingBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v){
+                Intent intent = new Intent(v.getContext(), RankingActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

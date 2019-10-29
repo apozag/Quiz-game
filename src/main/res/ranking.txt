@@ -1,0 +1,3 @@
+pepe		100
+juan		95
+luisa		30

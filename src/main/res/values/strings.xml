@@ -6,10 +6,21 @@
     <string name="Vibration">Vibration</string>
     <string name="Silent">Silent</string>
     <string name="Choose">Choose</string>
+    <string name="Volume">Volume</string>
+    <string name="Difficulty">Difficulty</string>
+    <string name="Language">Language</string>
+    <string name="Back">Back</string>
+    <string name="Ranking">Ranking</string>
 
     <string-array name="options_array">
         <item>Cine</item>
         <item>Música</item>
         <item>Historia</item>
     </string-array>
+
+    <string-array name="language_array">
+        <item>Español</item>
+        <item>English</item>
+    </string-array>
+
 </resources>
