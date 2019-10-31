@@ -10,6 +10,10 @@ import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static String PREFS_NAME = "MyPrefsFile";
+
+
     private Spinner spinner;
 
     @Override

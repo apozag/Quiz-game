@@ -7,7 +7,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -29,7 +28,6 @@ public class GameActivity extends AppCompatActivity {
     private TextView questionCount;
     private TextView scoreText;
     private Button chooseBtn;
-    private ImageView imageView;
 
     private Question currentQuestion;
 
@@ -54,8 +52,8 @@ public class GameActivity extends AppCompatActivity {
                 String a3m[] = {"4", "2", "8", "3"};
                 q3 = new Question(2, "¿A cuántas semicorcheas equivale una blanca?", new ArrayList<>(Arrays.asList(a3m)), 2);
 
-                String a4m[] = {"tuba", "trombón", "saxofón", "trompeta"};
-                q4 = new Question(3, "¿Qué instrumento es este?", new ArrayList<>(Arrays.asList(a4m)), 0, "tuba");
+                String a4m[] = {"4", "2", "8", "6"};
+                q4 = new Question(3, "¿A cuántas negras equivale una redonda?", new ArrayList<>(Arrays.asList(a4m)), 0);
 
                 String a5m[] = {"saxofón", "trompeta", "flauta travesera", "fagot"};
                 q5 = new Question(4, "¿Cuál de estos instrumentos no es de viento-madera?", new ArrayList<>(Arrays.asList(a5m)), 1);
@@ -123,7 +121,7 @@ public class GameActivity extends AppCompatActivity {
         questionCount = (TextView) findViewById(R.id.textQuestionCount);
         scoreText= (TextView)findViewById(R.id.textScore);
         score = 0;
-        imageView = (ImageView)findViewById(R.id.imageView);
+
         chooseBtn = (Button)findViewById(R.id.chooseBtn);
 
         chooseBtn.setOnClickListener(new View.OnClickListener() {
@@ -155,8 +153,6 @@ public class GameActivity extends AppCompatActivity {
                                 radioBtn4.setBackgroundColor(Color.RED);
                                 break;
                         }
-                        score -= 2;
-                        scoreText.setText("Score: " + score);
                     } else {
                         //acierto
                         switch (selectedId) {
@@ -173,7 +169,7 @@ public class GameActivity extends AppCompatActivity {
                                 radioBtn4.setBackgroundColor(Color.GREEN);
                                 break;
                         }
-                        score += 3;
+                        score += 1;
                         scoreText.setText("Score: " + score);
                     }
 
@@ -212,12 +208,6 @@ public class GameActivity extends AppCompatActivity {
         question.setText(currentQuestion.getQuestion());
 
         questionCount.setText("Question " + (currentQuestion.getId() + 1) + "/" + questions.size());
-
-
-        int img = getResources().getIdentifier("@drawable/"+currentQuestion.getImageId(),null,this.getPackageName());
-        imageView.setImageResource(img);
-
-
 
         radioBtn1.setText(currentQuestion.getOption(0));
         radioBtn2.setText(currentQuestion.getOption(1));

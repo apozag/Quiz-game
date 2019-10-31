@@ -10,21 +10,27 @@ import android.widget.TableLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import android.util.Log;
+import java.io.File;
 
 import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileOutputStream;
+import java.io.DataInputStream;
+import android.os.Environment;
 
 public class RankingActivity extends AppCompatActivity {
 
-    FileInputStream fos;
-    private static final String TAG = "Testing: ";
+    String fichero = "ranking.txt";
+    TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
 
+        text = new TextView(this);
+
+        saveRankingFile();
         readRankingFile();
 
         findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
@@ -38,33 +44,31 @@ public class RankingActivity extends AppCompatActivity {
 
     private void readRankingFile(){
 
-        String linea;
-
         TableLayout table = findViewById(R.id.rankingTable);
 
         try {
-            FileInputStream fi = openFileInput("../../res/ranking.txt");
-                    InputStreamReader miReader = new InputStreamReader(fi);
-            BufferedReader miBuffer = new BufferedReader(miReader);
-            while ((linea = miBuffer.readLine()) != null) {
-                TableRow tr = new TableRow(this);
-                tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+            FileInputStream fin = openFileInput(fichero);
+            DataInputStream dis = new DataInputStream(fin);
+            text.setText(dis.readLine());
+            TableRow tr = new TableRow(this);
+            table.addView(tr);
 
-                TextView text = new TextView(this);
-                text.setText(linea);
-
-                tr.addView(text);
-
-                table.addView(tr, new TableLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));;
-            }
-            fi.close();
-
-        }catch (Exception exc){
-            Log.d(TAG, "ranking file not found!");
+            fin.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
 
 
+    }
 
+    private void saveRankingFile(){
+        try {
+            FileOutputStream fos = openFileOutput(fichero, MODE_PRIVATE);
+            fos.write("ijbndidcbeiwf".getBytes());
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
