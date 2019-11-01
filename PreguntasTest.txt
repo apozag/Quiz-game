@@ -162,9 +162,10 @@
 "Jumpman"
 
 -10.
-"¿Cuál es la consola más vendida de la historia?"
-{"Play Station 2", "Game Boy", "Nintendo DS", "Play Station 1"}
+"¿A qué juego pertenece esta canción?"
+{"Undertale", "Final Fantasy", "Megaman", "Earthbound"}
 0
+"Undertale"
 
 -11.
 "¿Quién es el creador de Kirby?"
@@ -193,6 +194,7 @@
 "¿Cuál de estos no es un fantasma de Pacman?"
 {"Pinky", "Clyde", "Blinky", "Dinky"}
 3
+"Clyde"
 
 -16.
 "¿Quién es el enemigo de Donkey Kong?"
@@ -207,10 +209,10 @@
 
 
 -18.
-"¿Cómo se llama el protagonista de la saga Metal Gear?"
-{"Hunter", "Snake", "Hitman", "Drake"}
+"¿A qué saga pertenece el este tema?"
+{"Megaman", "Castlevania", "Kirby", "Metroid"}
 1
-
+"Castlevania"
 
 -19.
 "¿Cómo se llama el creador de Nier Automata?"
