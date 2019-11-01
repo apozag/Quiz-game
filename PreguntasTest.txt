@@ -1,0 +1,226 @@
+	MÚSICA
+-1.
+{"Una nota", "la nota do", "la clave de sol", "la clave de do"}
+"¿Qué es este símbolo?"
+2 
+"claveSol"
+
+-2.
+{"Mozart", "Vivaldi", "Beethoven", "Hans Zimmer"}
+"¿Quién compuso esta canción?"
+1
+"4estaciones"
+
+-3.
+{"Bach", "Vivaldi", "Pachelvel", "Haydn"}
+"¿Cuál de estos no es un compositor Barroco?"
+3
+
+-4.
+{"El primer acto", "una pieza para el coro", "una ópera acompañada por orquesta", "una pieza para el solista"}
+"¿Qué es una aria en la ópera?"
+3
+
+
+-5.
+{"Don't stop me now", "Tie your mother down", "Where are we now?", "These are the days of our lives"}
+"¿Cuál de estas canciones no pertenece a Queen?"
+2
+
+-6.
+{"Ennio Morricone", "Hans Zimmer", "Jonh Williams", "Howard Shore"}
+"¿Quién compuso este famoso tema del spaguetti westen?"
+0
+"western"
+
+-7.
+{"Martin Códax", "Guillermo IX de Aquitania", "Kid Keo", "Bernart de Ventadorn"}
+"¿Quién fue el primer trovador de la historia?"
+1
+
+-8.
+{"finales 60/principios 70", "finales 70/principios 80", "finales 80/principios 90", "finales 90/principios 2000"}
+"¿Cuándo nació el rap?"
+0
+"rap"
+
+-9.
+{"La flauta mágica", "Madama Butterfly", "Las bodas de Fígaro", "La falsa jardinera"}
+"¿Cuál de estas obras no es de Mozart?"
+1
+
+-10.
+{"Elvis Presley", "Little Richard", "Chuck Berry", "Bill Halley"}
+"¿De quién fue la primera grabación de Rock and Roll?"
+2
+
+-11.
+{"Candlestick", "Revolver", "Lead Piping", "Magic happends"}
+"¿Cuál de estos es el nombre de un álbum de los Beatles?"
+1
+
+-12.
+{"Tchaikovsky", "Mozart", "Beethoven", "David Guetta"}
+"¿Quién compuso esta pieza?"
+0
+"Waltz"
+
+-13.
+{"6", "5", "4?", "3"}
+"¿Cuántas cuerdas tiene una guitarra?"
+0
+
+-14.
+{"La más aguda", "La más grave", "La que decida el guitarrista", "Todas son incorrectas"}
+"¿Cuál es la primera cuerda de una guitarra?"
+1
+"guitarra"
+
+-15.
+{"Los espacios entre notas", "El ritmo", "La duración", "La velocidad a la que debe interpretarse"}
+"¿Qué es el tempo de una pieza?"
+1
+
+-16.
+{"5 líneas y 4 espacios", "5 líneas y 5 espacios", "5 líneas y 6 espacios", "4 líneas y 5 espacios"}
+"¿Cuántas líneas y espacios tiene un pentagrama?"
+0
+
+-17.
+{"Nueva York", "Philadelphia", "Chicago", "Nueva Orleans"}
+"¿En qué ciudad se originó el Jazz?"
+3
+
+-18.
+{"4", "2", "8", "3"}
+"¿A cuántas semicorcheas equivale una blanca?"
+2
+"blanca"
+
+-19.
+{"4", "2", "8", "6"}
+"¿A cuántas negras equivale una redonda?"
+0
+"redonda"
+
+-20.
+{"saxofón", "trompeta", "flauta travesera", "fagot"}
+"¿Cuál de estos instrumentos no es de viento-madera?"
+1
+
+	VIDEOJUEGOS
+-1.
+"¿Cuál de estos llegó primero?"
+{"Pong","Space Invaders","Pac-man","Asteroids"}
+0
+
+
+-2.
+"¿Cómo se llama el hermano de Mario Bros?"
+{"Mario Jr.", "Fabio", "Wario", "Luigi"}
+3
+"Mario"
+
+-3.
+"¿Cuántos luchadores hay en Street Fighter II?"
+{"12", "8", "4", "16"}
+0
+"Street Fighter"
+
+-4.
+"¿Cuántas entradas para mandos tiene la nintendo64?"
+{"2","4","6","1"}
+1
+
+-5.
+"¿Cómo se llama el archienemigo de Sonic?"
+{"Robotech", "Dr.Evil", "Knuckles", "Dr. Eggman"}
+3
+"DrEggman"
+
+-6.
+"¿De qué material es la primera espada que recibes en The Legend of Zelda?"
+{"Hueso", "Madera", "Bronce", "Acero"}
+1
+
+
+-7.
+"¿Cómo se llama la ciudad en la que se desenvuelve Resident Evil?"
+{"New Umbrella", "Metrópolis", "Raccoon City", "Resident City"}
+2
+
+-8.
+"¿Cómo se llama la protagonista de la saga Tomb Raider?"
+{"Jill Valentine", "Kim Stark", "Lara Croft", "Sara Conor"}
+2
+"Lara Croft"
+
+-9.
+"¿Con qué nombre se conoció a Mario Bros por primera vez?"
+{"Plumber Man", "Mario", "Super Plumber", "Jumpman"}
+3
+"Jumpman"
+
+-10.
+"¿Cuál es la consola más vendida de la historia?"
+{"Play Station 2", "Game Boy", "Nintendo DS", "Play Station 1"}
+0
+
+-11.
+"¿Quién es el creador de Kirby?"
+{"Shigeru Miyamoto", "Toru Iwatani", "Masahiro Sakurai", "Hideo Kojima"}
+2
+"Kirby"
+
+-12.
+"¿Cómo se llama el protagonista de la saga Halo?"
+{"Jefe Maestro", "Cabo Muerte", "Space Lord", "Master Commander"}
+0
+
+
+-13.
+"¿De qué país es originario Blanka?"
+{"India", "Brasil", "Canadá", "Chile"}
+1
+"Blanka"
+
+-14.
+"¿Qué instrumento de viento suele usar Link"?
+{"Armónica", "Flauta", "Trompeta", "Ocarina"}
+3
+
+-15.
+"¿Cuál de estos no es un fantasma de Pacman?"
+{"Pinky", "Clyde", "Blinky", "Dinky"}
+3
+
+-16.
+"¿Quién es el enemigo de Donkey Kong?"
+{"King K. Rool", "King Koopa", "King Croc", "King Dedede"}
+0
+
+
+-17.
+"¿Qué compañía creó la saga Ratchet and Clank?"
+{"Dreamworks", "Naughty Dog", "Insomniac", "Double Fine"}
+2
+
+
+-18.
+"¿Cómo se llama el protagonista de la saga Metal Gear?"
+{"Hunter", "Snake", "Hitman", "Drake"}
+1
+
+
+-19.
+"¿Cómo se llama el creador de Nier Automata?"
+{"Shigeru Miyamoto", "Yoko Taro", "Jonh Carmack", "Hideo Kojima"}
+1
+"YokoTaro"
+
+-20.
+"¿En qué año nació Doom?"
+{"1994", "1996", "1995", "1993"}
+3
+"Doom"
+
