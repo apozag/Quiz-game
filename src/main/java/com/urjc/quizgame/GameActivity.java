@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,7 +29,9 @@ public class GameActivity extends AppCompatActivity {
     private TextView question;
     private TextView questionCount;
     private TextView scoreText;
+    private ImageView imageView;
     private Button chooseBtn;
+    private MediaPlayer player;
 
     private Question currentQuestion;
 
@@ -43,8 +47,8 @@ public class GameActivity extends AppCompatActivity {
 
         switch(getIntent().getStringExtra("MODE")) {
             case "Música":
-                String a1m[] = {"5 líneas y 4 espacios", "5 líneas y 5 espacios", "5 líneas y 6 espacios", "4 líneas y 5 espacios"};
-                q1 = new Question(0, "¿Cuántas líneas y espacios tiene un pentagrama?", new ArrayList<>(Arrays.asList(a1m)), 0);
+                String a1m[] = {"Mozart", "Vivaldi", "Beethoven", "Hans Zimmer"};
+                q1 = new Question(0, "¿Quién compuso esta canción?", new ArrayList<>(Arrays.asList(a1m)), 1, null, "estaciones");
 
                 String a2m[] = {"Nueva York", "Philadelphia", "Chicago", "Nueva Orleans"};
                 q2 = new Question(1, "¿En qué ciudad se originó el Jazz?", new ArrayList<>(Arrays.asList(a2m)), 3);
@@ -52,8 +56,8 @@ public class GameActivity extends AppCompatActivity {
                 String a3m[] = {"4", "2", "8", "3"};
                 q3 = new Question(2, "¿A cuántas semicorcheas equivale una blanca?", new ArrayList<>(Arrays.asList(a3m)), 2);
 
-                String a4m[] = {"4", "2", "8", "6"};
-                q4 = new Question(3, "¿A cuántas negras equivale una redonda?", new ArrayList<>(Arrays.asList(a4m)), 0);
+                String a4m[] = {"tuba", "trombón", "saxofón", "trompeta"};
+                q4 = new Question(3, "¿Qué instrumento es este?", new ArrayList<>(Arrays.asList(a4m)), 0, "tuba");
 
                 String a5m[] = {"saxofón", "trompeta", "flauta travesera", "fagot"};
                 q5 = new Question(4, "¿Cuál de estos instrumentos no es de viento-madera?", new ArrayList<>(Arrays.asList(a5m)), 1);
@@ -123,6 +127,7 @@ public class GameActivity extends AppCompatActivity {
         score = 0;
 
         chooseBtn = (Button)findViewById(R.id.chooseBtn);
+        imageView = (ImageView)findViewById(R.id.imageView);
 
         chooseBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -209,6 +214,16 @@ public class GameActivity extends AppCompatActivity {
 
         questionCount.setText("Question " + (currentQuestion.getId() + 1) + "/" + questions.size());
 
+        int img = getResources().getIdentifier("@drawable/"+currentQuestion.getImageId(),null,this.getPackageName());
+        imageView.setImageResource(img);
+
+        //Detiene la reproducción de audio de la pregunta anterior
+        stop();
+        //Reproduce el nuevo audio en caso de que exista
+        if (currentQuestion.getMusicId() != null){
+            play();
+        }
+
         radioBtn1.setText(currentQuestion.getOption(0));
         radioBtn2.setText(currentQuestion.getOption(1));
         radioBtn3.setText(currentQuestion.getOption(2));
@@ -220,5 +235,20 @@ public class GameActivity extends AppCompatActivity {
         radioBtn4.setBackgroundColor(0x00000000);
     }
 
+    //Crea un nuevo reproductor en caso de que no exista y lo reproduce
+    private void play(){
+        if (player == null){
+            int music = getResources().getIdentifier("@raw/"+currentQuestion.getMusicId(),null,this.getPackageName());
+            player = MediaPlayer.create(this, music);
+        }
+        player.start();
+    }
 
+    //Detiene la reproducción y libera los recursos
+    private void stop (){
+        if (player != null){
+            player.release();
+            player = null;
+        }
+    }
 }

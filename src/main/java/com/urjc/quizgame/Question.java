@@ -7,6 +7,9 @@ public class Question {
     private String question;
     private ArrayList<String> options = new ArrayList<String>();
     private int answer;
+    private String imageId = null;
+    private String musicId = null;
+
 
     public Question() {}
 
@@ -15,6 +18,23 @@ public class Question {
         this.question = question;
         this.options = options;
         this.answer = answer;
+    }
+
+    public Question(int id, String question, ArrayList<String> options, int answer, String imageId) {
+        this.id = id;
+        this.question = question;
+        this.options = options;
+        this.answer = answer;
+        this.imageId = imageId;
+    }
+
+    public Question(int id, String question, ArrayList<String> options, int answer, String imageId, String musicId) {
+        this.id = id;
+        this.question = question;
+        this.options = options;
+        this.answer = answer;
+        this.imageId = imageId;
+        this.musicId = musicId;
     }
 
     public int getId() {
@@ -50,5 +70,15 @@ public class Question {
     public void setAnswer(int answer) {
         this.answer = answer;
     }
+
+    public String getImageId() { return imageId; }
+
+    public void setImageId(String imageId) { this.imageId = imageId; }
+
+    public String getMusicId() { return musicId; }
+
+    public void setMusicId(String musicId) { this.musicId = musicId; }
 }
+
+
 
