@@ -1,0 +1,145 @@
+{
+
+    "music" : [
+        {
+            "question" : "¿Qué es este símbolo?",
+            "answers" : ["Una nota", "la nota do", "la clave de sol", "la clave de do"],
+            "audio" : "null",
+            "image" : "claveSol",
+            "correct" : "2"
+        },
+        {
+            "question" : "¿Quién compuso esta canción?",
+            "answers" : ["Mozart", "Vivaldi", "Beethoven", "Hans Zimmer"],
+            "audio" : "4estaciones",
+            "image" : "null",
+            "correct" : "1"
+        },
+        {
+            "question" : "¿Cuál de estos no es un compositor Barroco?",
+            "answers" : ["Bach", "Vivaldi", "Pachelvel", "Haydn"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "3"
+        },
+        {
+            "question" : "¿Qué es una aria en la ópera?",
+            "answers" : ["El primer acto", "una pieza para el coro", "una ópera acompañada por orquesta", "una pieza para el solista"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "3"
+        },
+        {
+            "question" : "¿Cuál de estas canciones no pertenece a Queen?",
+            "answers" : ["Don't stop me now", "Tie your mother down", "Where are we now?", "These are the days of our lives"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "2"
+        },
+        {
+            "question" : "¿Quién compuso este famoso tema del spaguetti westen?",
+            "answers" : ["Ennio Morricone", "Hans Zimmer", "Jonh Williams", "Howard Shore"],
+            "audio" : "western",
+            "image" : "null",
+            "correct" : "0"
+        },
+        {
+            "question" : "¿Quién fue el primer trovador de la historia?",
+            "answers" : ["Martin Códax", "Guillermo IX de Aquitania", "Kid Keo", "Bernart de Ventadorn"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "1"
+        },
+        {
+            "question" : "¿Cuándo nació el rap?",
+            "answers" : ["Don't stop me now", "Tie your mother down", "Where are we now?", "These are the days of our lives"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "0"
+        },
+        {
+            "question" : "¿Cuál de estas obras no es de Mozart?",
+            "answers" : ["La flauta mágica", "Madama Butterfly", "Las bodas de Fígaro", "La falsa jardinera"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "1"
+        },
+        {
+            "question" : "¿De quién fue la primera grabación de Rock and Roll?",
+            "answers" : ["Elvis Presley", "Little Richard", "Chuck Berry", "Bill Halley"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "2"
+        },
+        {
+            "question" : "¿Cuál de estos es el nombre de un álbum de los Beatles?",
+            "answers" : ["Candlestick", "Revolver", "Lead Piping", "Magic happends"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "1"
+        },
+        {
+            "question" : "¿Quién compuso esta pieza?",
+            "answers" : ["Tchaikovsky", "Mozart", "Beethoven", "David Guetta"],
+            "audio" : "Waltz",
+            "image" : "null",
+            "correct" : "0"
+        },
+        {
+            "question" : "¿Cuántas cuerdas tiene una guitarra?",
+            "answers" : ["6", "5", "4?", "3"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "0"
+        },
+        {
+            "question" : "¿Cuál es la primera cuerda de una guitarra?",
+            "answers" : ["La más aguda", "La más grave", "La que decida el guitarrista", "Todas son incorrectas"],
+            "audio" : "null",
+            "image" : "guitarra",
+            "correct" : "1"
+        },
+        {
+            "question" : "¿Qué es el tempo de una pieza?",
+            "answers" : ["Los espacios entre notas", "El ritmo", "La duración", "La velocidad a la que debe interpretarse"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "1"
+        },
+        {
+            "question" : "¿Cuántas líneas y espacios tiene un pentagrama?",
+            "answers" : ["5 líneas y 4 espacios", "5 líneas y 5 espacios", "5 líneas y 6 espacios", "4 líneas y 5 espacios"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "0"
+        },
+        {
+            "question" : "¿En qué ciudad se originó el Jazz?",
+            "answers" : ["Nueva York", "Philadelphia", "Chicago", "Nueva Orleans"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "3"
+        },
+        {
+            "question" : "¿A cuántas semicorcheas equivale una blanca?",
+            "answers" : ["4", "2", "8", "3"],
+            "audio" : "null",
+            "image" : "blanca",
+            "correct" : "2"
+        },
+        {
+            "question" : "¿A cuántas negras equivale una redonda?",
+            "answers" : ["4", "2", "8", "6"],
+            "audio" : "null",
+            "image" : "redonda",
+            "correct" : "0"
+        },
+        {
+            "question" : "¿Cuál de estos instrumentos no es de viento-madera?",
+            "answers" : ["saxofón", "trompeta", "flauta travesera", "fagot"],
+            "audio" : "null",
+            "image" : "null",
+            "correct" : "1"
+        }
+    ]
+}

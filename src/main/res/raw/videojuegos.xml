@@ -1,0 +1,145 @@
+{
+
+    "music" : [
+    {
+    "question" : "¿Cuál de estos llegó primero?",
+    "answers" : ["Pong","Space Invaders","Pac-man","Asteroids"],
+    "audio" : "null",
+    "image" : "null",
+    "correct" : "0"
+    },
+    {
+    "question" : "¿Cómo se llama el hermano de Mario Bros?",
+    "answers" : ["Mario Jr.", "Fabio", "Wario", "Luigi"],
+    "audio" : "null",
+    "image" : "mario",
+    "correct" : "3"
+    },
+    {
+    "question" : "¿Cuántos luchadores hay en Street Fighter II?",
+    "answers" : ["12", "8", "4", "16"],
+    "audio" : "null",
+    "image" : "Street Fighter",
+    "correct" : "0"
+    },
+    {
+    "question" : "¿Cuántas entradas para mandos tiene la nintendo64?",
+    "answers" : ["2","4","6","1"],
+    "audio" : "null",
+    "image" : "null",
+    "correct" : "1"
+    },
+    {
+    "question" : "¿Cómo se llama el archienemigo de Sonic?",
+    "answers" : ["Robotech", "Dr.Evil", "Knuckles", "Dr. Eggman"],
+    "audio" : "null",
+    "image" : "null",
+    "correct" : "3"
+    },
+    {
+    "question" : "¿De qué material es la primera espada que recibes en The Legend of Zelda?",
+    "answers" : ["Hueso", "Madera", "Bronce", "Acero"],
+    "audio" : "null",
+    "image" : "null",
+    "correct" : "1"
+    },
+    {
+    "question" : "¿Cómo se llama la ciudad en la que se desenvuelve Resident Evil?",
+    "answers" : ["New Umbrella", "Metrópolis", "Raccoon City", "Resident City"],
+    "audio" : "null",
+    "image" : "null",
+    "correct" : "2"
+    },
+    {
+    "question" : "¿Cómo se llama la protagonista de la saga Tomb Raider?",
+    "answers" : ["Jill Valentine", "Kim Stark", "Lara Croft", "Sara Conor"],
+    "audio" : "null",
+    "image" : "Lara Croft",
+    "correct" : "2"
+    },
+    {
+    "question" : "¿Con qué nombre se conoció a Mario Bros por primera vez?",
+    "answers" : ["Plumber Man", "Mario", "Super Plumber", "Jumpman"],
+    "audio" : "null",
+    "image" : "Jumpman",
+    "correct" : "3"
+    },
+    {
+    "question" : "¿A qué juego pertenece esta canción?",
+    "answers" : ["Undertale", "Final Fantasy", "Megaman", "Earthbound"],
+    "audio" : "Undertale",
+    "image" : "null",
+    "correct" : "0"
+    },
+    {
+    "question" : "¿Quién es el creador de Kirby?",
+    "answers" : ["Shigeru Miyamoto", "Toru Iwatani", "Masahiro Sakurai", "Hideo Kojima"],
+    "audio" : "null",
+    "image" : "kirby",
+    "correct" : "2"
+    },
+    {
+    "question" : "¿Cómo se llama el protagonista de la saga Halo?",
+    "answers" : ["Jefe Maestro", "Cabo Muerte", "Space Lord", "Master Commander"],
+    "audio" : "null",
+    "image" : "null",
+    "correct" : "0"
+    },
+    {
+    "question" : "¿De qué país es originario Blanka?",
+    "answers" : ["India", "Brasil", "Canadá", "Chile"],
+    "audio" : "null",
+    "image" : "Blanka",
+    "correct" : "1"
+    },
+    {
+    "question" : "¿Qué instrumento de viento suele usar Link?",
+    "answers" : ["Armónica", "Flauta", "Trompeta", "Ocarina"],
+    "audio" : "null",
+    "image" : "null",
+    "correct" : "3"
+    },
+    {
+    "question" : "¿Cuál de estos no es un fantasma de Pacman?",
+    "answers" : ["Pinky", "Clyde", "Blinky", "Dinky"],
+    "audio" : "null",
+    "image" : "Clyde",
+    "correct" : "3"
+    },
+    {
+    "question" : "¿Quién es el enemigo de Donkey Kong?",
+    "answers" : ["King K. Rool", "King Koopa", "King Croc", "King Dedede"],
+    "audio" : "null",
+    "image" : "null",
+    "correct" : "0"
+    },
+    {
+    "question" : "¿Qué compañía creó la saga Ratchet and Clank?",
+    "answers" : ["Dreamworks", "Naughty Dog", "Insomniac", "Double Fine"],
+    "audio" : "null",
+    "image" : "null",
+    "correct" : "2"
+    },
+    {
+    "question" : "¿A qué saga pertenece el este tema?",
+    "answers" : ["Megaman", "Castlevania", "Kirby", "Metroid"],
+    "audio" : "Castlevania",
+    "image" : "null",
+    "correct" : "1"
+    },
+    {
+    "question" : "¿Cómo se llama el creador de Nier Automata?",
+    "answers" : ["Shigeru Miyamoto", "Yoko Taro", "Jonh Carmack", "Hideo Kojima"],
+    "audio" : "null",
+    "image" : "YokoTaro",
+    "correct" : "1"
+    },
+    {
+    "question" : "¿En qué año nació Doom?",
+    "answers" : ["1994", "1996", "1995", "1993"],
+    "audio" : "null",
+    "image" : "Doom",
+    "correct" : "3"
+    }
+    ]
+    }
