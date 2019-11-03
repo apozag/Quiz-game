@@ -256,7 +256,7 @@ public class GameActivity extends AppCompatActivity {
             String s = new String(b);
             JSONObject obj = new JSONObject(new String(b));
 
-            JSONArray array = obj.getJSONArray("music");
+            JSONArray array = obj.getJSONArray("questions");
 
             for(int i = 0 ; i < array.length() ; i++){
 

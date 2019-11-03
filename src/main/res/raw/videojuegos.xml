@@ -1,6 +1,6 @@
 {
 
-    "music" : [
+    "questions" : [
     {
     "question" : "¿Cuál de estos llegó primero?",
     "answers" : ["Pong","Space Invaders","Pac-man","Asteroids"],

@@ -1,6 +1,6 @@
 {
 
-    "music" : [
+    "questions" : [
         {
             "question" : "¿Qué es este símbolo?",
             "answers" : ["Una nota", "la nota do", "la clave de sol", "la clave de do"],
