@@ -72,9 +72,9 @@
             "correct" : "2"
         },
         {
-            "question" : "¿Cuál de estos es el nombre de un álbum de los Beatles?",
-            "answers" : ["Candlestick", "Revolver", "Lead Piping", "Magic happends"],
-            "audio" : "null",
+            "question" : "¿A quién pertenece esta canción?",
+            "answers" : ["Guns and Roses", "Bob Dylan", "Elton Jonh", "Jason Derulo"],
+            "audio" : "bobdylan",
             "image" : "null",
             "correct" : "1"
         },
@@ -128,10 +128,10 @@
             "correct" : "2"
         },
         {
-            "question" : "¿A cuántas negras equivale una redonda?",
-            "answers" : ["4", "2", "8", "6"],
-            "audio" : "null",
-            "image" : "redonda",
+            "question" : "¿Qué grupo compuso esta canción?",
+            "answers" : ["Pink Floyd", "Beatles", "Led Zeppelin", "Queen"],
+            "audio" : "pinkfloyd",
+            "image" : "null",
             "correct" : "0"
         },
         {

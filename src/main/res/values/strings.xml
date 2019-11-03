@@ -13,9 +13,8 @@
     <string name="Ranking">Ranking</string>
 
     <string-array name="options_array">
-        <item>Cine</item>
+        <item>Videojuegos</item>
         <item>Música</item>
-        <item>Historia</item>
     </string-array>
 
     <string-array name="language_array">
