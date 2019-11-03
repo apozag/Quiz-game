@@ -54,7 +54,7 @@ public class GameActivity extends AppCompatActivity {
     private Button chooseBtn;
     private Chronometer chronometer;
     private MediaPlayer player;
-
+    private int seconds;
     private Question currentQuestion;
 
     @Override
@@ -155,6 +155,7 @@ public class GameActivity extends AppCompatActivity {
                     if(currentQuestion.getId() <= questions.size()-2 && currentQuestion.getId() <= MAX_QUESTIONS)
                         changeQuestion (currentQuestion.getId() + 1);
                     else{
+                        stopChronometer();
                         Intent intent = new Intent(v.getContext(), ScoreActivity.class);
                         intent.putExtra("SCORE", score+"");
                         intent.putExtra("TIME", chronometer.getText());
@@ -236,6 +237,14 @@ public class GameActivity extends AppCompatActivity {
 
     private void stopChronometer(){
         chronometer.stop();
+        seconds = (int)((SystemClock.elapsedRealtime() - chronometer.getBase())/1000) % 60;
+        setFinalScore();
+    }
+
+    private void setFinalScore(){
+        if (MAX_QUESTIONS <= seconds/MAX_QUESTIONS){
+            score *= MAX_QUESTIONS - seconds/MAX_QUESTIONS;
+        }
     }
 
     private void readQuestions(String type){
