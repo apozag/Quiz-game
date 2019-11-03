@@ -52,7 +52,7 @@
         },
         {
             "question" : "¿Cuándo nació el rap?",
-            "answers" : ["Don't stop me now", "Tie your mother down", "Where are we now?", "These are the days of our lives"],
+            "answers" : ["finales 60/principios 70", "finales 70/principios 80", "finales 80/principios 90", "finales 90/principios 2000"],
             "audio" : "null",
             "image" : "null",
             "correct" : "0"
@@ -87,7 +87,7 @@
         },
         {
             "question" : "¿Cuántas cuerdas tiene una guitarra?",
-            "answers" : ["6", "5", "4?", "3"],
+            "answers" : ["6", "5", "4", "3"],
             "audio" : "null",
             "image" : "null",
             "correct" : "0"
@@ -97,7 +97,7 @@
             "answers" : ["La más aguda", "La más grave", "La que decida el guitarrista", "Todas son incorrectas"],
             "audio" : "null",
             "image" : "guitarra",
-            "correct" : "1"
+            "correct" : "0"
         },
         {
             "question" : "¿Qué es el tempo de una pieza?",
