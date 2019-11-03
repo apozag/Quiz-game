@@ -59,16 +59,20 @@ public class RankingActivity extends AppCompatActivity {
         }
 
 
-
+  
     }
 
     private void saveRankingFile(){
+        FileOutputStream fos = null;
         try {
-            FileOutputStream fos = openFileOutput(fichero, MODE_PRIVATE);
+            fos = openFileOutput(fichero, MODE_PRIVATE);
             fos.write("ijbndidcbeiwf".getBytes());
-            fos.close();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally{
+            try {
+                fos.close();
+            }catch(IOException exc){}
         }
     }
 }

@@ -33,6 +33,7 @@ public class SettingsActivity extends AppCompatActivity {
         languageSpinner.setAdapter(adapter);
 
         SeekBar difficulty = findViewById(R.id.difficultyBar);
+        difficulty.setProgress(settings.getInt("difficulty", 0));
         difficulty.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -52,6 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         SeekBar volume = findViewById(R.id.volumeBar);
+        volume.setProgress(settings.getInt("volume", 0));
         volume.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -93,8 +95,7 @@ public class SettingsActivity extends AppCompatActivity {
         findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v){
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }

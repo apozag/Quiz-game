@@ -3,6 +3,7 @@ package com.urjc.quizgame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -35,6 +36,9 @@ public class GameActivity extends AppCompatActivity {
 
     private int score;
     private int MAX_QUESTIONS;
+    private final static int MAX_VOLUME = 100;
+    private float currentVolume;
+    private SharedPreferences preferences;
     private ArrayList<Question> questions = new ArrayList<>();
     private RadioGroup radioGroup;
     private RadioButton radioBtn1;
@@ -55,8 +59,10 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        //TODO preferencias en objeto aparte para sacar otras cosas
-        MAX_QUESTIONS = (getSharedPreferences("MyPrefsFile", 0).getInt("difficulty", 1) +1)* 6;
+        //Music volume
+        preferences = getSharedPreferences("MyPrefsFile", 0);
+        MAX_QUESTIONS = (preferences.getInt("difficulty", 1) +1)* 6;
+        currentVolume = (float) (1 - (Math.log(MAX_VOLUME - preferences.getInt("volume", 0)) / Math.log(MAX_VOLUME)));
 
         readQuestions(getIntent().getStringExtra("MODE"));
 
@@ -203,6 +209,7 @@ public class GameActivity extends AppCompatActivity {
         if (player == null){
             int music = getResources().getIdentifier("@raw/"+currentQuestion.getMusicId(),null, this.getPackageName());
             player = MediaPlayer.create(this, music);
+            player.setVolume(currentVolume, currentVolume);
         }
         player.start();
     }
