@@ -7,9 +7,11 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.os.Debug;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -50,6 +52,7 @@ public class GameActivity extends AppCompatActivity {
     private TextView scoreText;
     private ImageView imageView;
     private Button chooseBtn;
+    private Chronometer chronometer;
     private MediaPlayer player;
 
     private Question currentQuestion;
@@ -63,6 +66,9 @@ public class GameActivity extends AppCompatActivity {
         preferences = getSharedPreferences("MyPrefsFile", 0);
         MAX_QUESTIONS = (preferences.getInt("difficulty", 1) +1)* 6;
         currentVolume = (float) (1 - (Math.log(MAX_VOLUME - preferences.getInt("volume", 0)) / Math.log(MAX_VOLUME)));
+        //Cronometro
+        chronometer = findViewById(R.id.chronometer);
+        startChronometer();
 
         readQuestions(getIntent().getStringExtra("MODE"));
 
@@ -151,6 +157,7 @@ public class GameActivity extends AppCompatActivity {
                     else{
                         Intent intent = new Intent(v.getContext(), ScoreActivity.class);
                         intent.putExtra("SCORE", score+"");
+                        intent.putExtra("TIME", chronometer.getText());
                         startActivity(intent);
                     }
                 }
@@ -220,6 +227,15 @@ public class GameActivity extends AppCompatActivity {
             player.release();
             player = null;
         }
+    }
+
+    private void startChronometer(){
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        chronometer.start();
+    }
+
+    private void stopChronometer(){
+        chronometer.stop();
     }
 
     private void readQuestions(String type){

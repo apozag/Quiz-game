@@ -22,8 +22,10 @@ public class ScoreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
+        setContentView(R.layout.activity_score);
 
         ((TextView)findViewById(R.id.score)).setText(getIntent().getStringExtra("SCORE"));
+        ((TextView)findViewById(R.id.time)).setText(getIntent().getStringExtra("TIME"));
 
 
         menuBtn = findViewById(R.id.menuBtn);
