@@ -55,6 +55,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        //TODO preferencias en objeto aparte para sacar otras cosas
         MAX_QUESTIONS = (getSharedPreferences("MyPrefsFile", 0).getInt("difficulty", 1) +1)* 6;
 
         readQuestions(getIntent().getStringExtra("MODE"));
@@ -183,7 +184,7 @@ public class GameActivity extends AppCompatActivity {
         stop();
         //Reproduce el nuevo audio en caso de que exista
         if (!currentQuestion.getMusicId().equals("null") && currentQuestion.getMusicId() != null){
-            //play();
+            play();
         }
 
         radioBtn1.setText(currentQuestion.getOption(0));
@@ -218,10 +219,14 @@ public class GameActivity extends AppCompatActivity {
         try {
 
             InputStream recursoRaw;
+
+            //TODO Cambiar a switch case
             if(type.equals("Música"))
                 recursoRaw = getResources().openRawResource(R.raw.musica);
             else
                 recursoRaw = getResources().openRawResource(R.raw.videojuegos);
+
+
             byte[] b = new byte[recursoRaw.available()];
             recursoRaw.read(b);
 

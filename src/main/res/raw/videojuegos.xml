@@ -19,7 +19,7 @@
     "question" : "¿Cuántos luchadores hay en Street Fighter II?",
     "answers" : ["12", "8", "4", "16"],
     "audio" : "null",
-    "image" : "Street Fighter",
+    "image" : "streetfighter",
     "correct" : "0"
     },
     {
@@ -54,20 +54,20 @@
     "question" : "¿Cómo se llama la protagonista de la saga Tomb Raider?",
     "answers" : ["Jill Valentine", "Kim Stark", "Lara Croft", "Sara Conor"],
     "audio" : "null",
-    "image" : "Lara Croft",
+    "image" : "laracroft",
     "correct" : "2"
     },
     {
     "question" : "¿Con qué nombre se conoció a Mario Bros por primera vez?",
     "answers" : ["Plumber Man", "Mario", "Super Plumber", "Jumpman"],
     "audio" : "null",
-    "image" : "Jumpman",
+    "image" : "jumpman",
     "correct" : "3"
     },
     {
     "question" : "¿A qué juego pertenece esta canción?",
     "answers" : ["Undertale", "Final Fantasy", "Megaman", "Earthbound"],
-    "audio" : "Undertale",
+    "audio" : "undertale",
     "image" : "null",
     "correct" : "0"
     },
@@ -103,7 +103,7 @@
     "question" : "¿Cuál de estos no es un fantasma de Pacman?",
     "answers" : ["Pinky", "Clyde", "Blinky", "Dinky"],
     "audio" : "null",
-    "image" : "Clyde",
+    "image" : "clyde",
     "correct" : "3"
     },
     {
@@ -123,7 +123,7 @@
     {
     "question" : "¿A qué saga pertenece el este tema?",
     "answers" : ["Megaman", "Castlevania", "Kirby", "Metroid"],
-    "audio" : "Castlevania",
+    "audio" : "castlevania",
     "image" : "null",
     "correct" : "1"
     },
@@ -131,14 +131,14 @@
     "question" : "¿Cómo se llama el creador de Nier Automata?",
     "answers" : ["Shigeru Miyamoto", "Yoko Taro", "Jonh Carmack", "Hideo Kojima"],
     "audio" : "null",
-    "image" : "YokoTaro",
+    "image" : "yokotaro",
     "correct" : "1"
     },
     {
     "question" : "¿En qué año nació Doom?",
     "answers" : ["1994", "1996", "1995", "1993"],
     "audio" : "null",
-    "image" : "Doom",
+    "image" : "doom",
     "correct" : "3"
     }
     ]

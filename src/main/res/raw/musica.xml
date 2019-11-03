@@ -5,13 +5,13 @@
             "question" : "¿Qué es este símbolo?",
             "answers" : ["Una nota", "la nota do", "la clave de sol", "la clave de do"],
             "audio" : "null",
-            "image" : "claveSol",
+            "image" : "clavesol",
             "correct" : "2"
         },
         {
             "question" : "¿Quién compuso esta canción?",
             "answers" : ["Mozart", "Vivaldi", "Beethoven", "Hans Zimmer"],
-            "audio" : "4estaciones",
+            "audio" : "estaciones",
             "image" : "null",
             "correct" : "1"
         },
@@ -81,7 +81,7 @@
         {
             "question" : "¿Quién compuso esta pieza?",
             "answers" : ["Tchaikovsky", "Mozart", "Beethoven", "David Guetta"],
-            "audio" : "Waltz",
+            "audio" : "waltz",
             "image" : "null",
             "correct" : "0"
         },
