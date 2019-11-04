@@ -24,10 +24,20 @@ public class RankingHelper {
 
     public static int MAX_SIZE = 10;
 
-    public class Record{
+
+    public class Record implements Comparable<Record>{
         public String name;
         public int points;
         Record(String n, int p){name = n; points = p;}
+
+        @Override
+        public int compareTo(Record o) {
+            if (this.name == o.name && this.points == o.points){
+                return 0;
+            } else {
+                return 1;
+            }
+        }
     }
 
     static private List<Record> records = new ArrayList<>();
