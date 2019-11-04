@@ -80,7 +80,8 @@ public class ScoreActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        if(Integer.parseInt(getIntent().getStringExtra("SCORE")) > ranking.getLower()) {
+        if(Integer.parseInt(getIntent().getStringExtra("SCORE")) > ranking.getLower() || !ranking.isFull()) {
+
 
             //Pedimos nombre al usuario
             TableLayout table = findViewById(R.id.table);

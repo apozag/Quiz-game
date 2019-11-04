@@ -43,19 +43,14 @@ public class RankingHelper {
 
     static private List<Record> records = new ArrayList<>();
 
-    public boolean addIfIsRecord(String name, int points){
+    public void addIfIsRecord(String name, int points){
         Record newRecord = new Record(name, points);
         if(records.isEmpty()){
             records.add(newRecord);
-            return true;
         }else {
-            if(getLower() < points){
-                records.add(0, newRecord);
-                if(records.size() > MAX_SIZE)
-                    removeLower();
-                return true;
-            }
-            return false;
+            records.add(newRecord);
+            if(records.size() > MAX_SIZE)
+                removeLower();
         }
     }
     public String toString(){
@@ -105,6 +100,10 @@ public class RankingHelper {
             }
         }
         records.remove(lower);
+    }
+
+    public boolean isFull(){
+        return records.size() >= MAX_SIZE;
     }
 /*
     public void readRankingFile(){
