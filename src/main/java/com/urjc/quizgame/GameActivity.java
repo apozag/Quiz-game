@@ -242,8 +242,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void setFinalScore(){
-        if (MAX_QUESTIONS <= seconds/MAX_QUESTIONS){
-            score *= MAX_QUESTIONS - seconds/MAX_QUESTIONS;
+        if (MAX_QUESTIONS < seconds/MAX_QUESTIONS){
+            score *= seconds/MAX_QUESTIONS - MAX_QUESTIONS;
         }
     }
 
