@@ -23,16 +23,16 @@
     "correct" : "0"
     },
     {
-    "question" : "¿Cuántas entradas para mandos tiene la nintendo64?",
-    "answers" : ["2","4","6","1"],
-    "audio" : "null",
+    "question" : "¿A qué saga pertenece este tema?",
+    "answers" : ["Metal Gear","Megaman","Kirby","Donkey Kong"],
+    "audio" : "megaman",
     "image" : "null",
     "correct" : "1"
     },
     {
-    "question" : "¿Cómo se llama el archienemigo de Sonic?",
-    "answers" : ["Robotech", "Dr.Evil", "Knuckles", "Dr. Eggman"],
-    "audio" : "null",
+    "question" : "¿De qué saga es este tema de Game Over?",
+    "answers" : ["Call of Duty", "Halo", "Resident Evil", "Metal Gear"],
+    "audio" : "metalgear",
     "image" : "null",
     "correct" : "3"
     },
@@ -93,9 +93,9 @@
     "correct" : "1"
     },
     {
-    "question" : "¿Qué instrumento de viento suele usar Link?",
-    "answers" : ["Armónica", "Flauta", "Trompeta", "Ocarina"],
-    "audio" : "null",
+    "question" : "¿A qué juego pertenece este tema bajo el agua?",
+    "answers" : ["Super Mario Bros", "Kirby", "Megaman", "Donkey Kong Country"],
+    "audio" : "donkeykong",
     "image" : "null",
     "correct" : "3"
     },

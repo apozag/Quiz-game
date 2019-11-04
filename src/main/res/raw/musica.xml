@@ -52,7 +52,7 @@
         },
         {
             "question" : "¿Cuándo nació el rap?",
-            "answers" : ["Don't stop me now", "Tie your mother down", "Where are we now?", "These are the days of our lives"],
+            "answers" : ["finales 60/principios 70", "finales 70/principios 80", "finales 80/principios 90", "finales 90/principios 2000"],
             "audio" : "null",
             "image" : "null",
             "correct" : "0"
@@ -72,9 +72,9 @@
             "correct" : "2"
         },
         {
-            "question" : "¿Cuál de estos es el nombre de un álbum de los Beatles?",
-            "answers" : ["Candlestick", "Revolver", "Lead Piping", "Magic happends"],
-            "audio" : "null",
+            "question" : "¿A quién pertenece esta canción?",
+            "answers" : ["Guns and Roses", "Bob Dylan", "Elton Jonh", "Jason Derulo"],
+            "audio" : "bobdylan",
             "image" : "null",
             "correct" : "1"
         },
@@ -87,7 +87,7 @@
         },
         {
             "question" : "¿Cuántas cuerdas tiene una guitarra?",
-            "answers" : ["6", "5", "4?", "3"],
+            "answers" : ["6", "5", "4", "3"],
             "audio" : "null",
             "image" : "null",
             "correct" : "0"
@@ -97,7 +97,7 @@
             "answers" : ["La más aguda", "La más grave", "La que decida el guitarrista", "Todas son incorrectas"],
             "audio" : "null",
             "image" : "guitarra",
-            "correct" : "1"
+            "correct" : "0"
         },
         {
             "question" : "¿Qué es el tempo de una pieza?",
@@ -128,10 +128,10 @@
             "correct" : "2"
         },
         {
-            "question" : "¿A cuántas negras equivale una redonda?",
-            "answers" : ["4", "2", "8", "6"],
-            "audio" : "null",
-            "image" : "redonda",
+            "question" : "¿Qué grupo compuso esta canción?",
+            "answers" : ["Pink Floyd", "Beatles", "Led Zeppelin", "Queen"],
+            "audio" : "pinkfloyd",
+            "image" : "null",
             "correct" : "0"
         },
         {
