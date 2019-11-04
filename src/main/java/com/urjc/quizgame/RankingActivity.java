@@ -2,77 +2,84 @@ package com.urjc.quizgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TableRow;
 import android.widget.TableLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import android.util.Log;
-import java.io.File;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.FileOutputStream;
 import java.io.DataInputStream;
-import android.os.Environment;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class RankingActivity extends AppCompatActivity {
 
     String fichero = "ranking.txt";
-    TextView text;
+
+    RankingHelper ranking = new RankingHelper();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
 
-        text = new TextView(this);
-
-        saveRankingFile();
-        readRankingFile();
-
         findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v){
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
+
+        display();
     }
 
-    private void readRankingFile(){
-
+   private void display(){
         TableLayout table = findViewById(R.id.rankingTable);
+        ranking.clear();
+       try {
+           FileInputStream fin = openFileInput(fichero);
+           DataInputStream dis = new DataInputStream(fin);
+           String line = dis.readLine();
+           StringBuilder sb = new StringBuilder();
+           while(line != null){
+               sb.append(line);
+               line = dis.readLine();
+           }
+           String fileAsString = sb.toString();
+           Log.d("Debug", fileAsString);
+           JSONObject obj = new JSONObject(fileAsString);
+           JSONArray array = obj.getJSONArray("ranking");
+           for(int i = 0; i < array.length(); i++){
+               JSONObject jo = array.getJSONObject(i);
+               TableRow tr = new TableRow(this);
+               TextView text = new TextView(this);
+               text.setText(jo.getString("name") + jo.getInt("points"));
+               tr.addView(text);
+               table.addView(tr);
+           }
+           fin.close();
+       } catch (IOException e) {
+           e.printStackTrace();
+       } catch(JSONException e){
+           e.printStackTrace();
+       }
 
-        try {
-            FileInputStream fin = openFileInput(fichero);
-            DataInputStream dis = new DataInputStream(fin);
-            text.setText(dis.readLine());
-            TableRow tr = new TableRow(this);
-            table.addView(tr);
+/*
+       for(String s : ranking.getLines()){
+           TableRow tr = new TableRow(this);
+           TextView text = new TextView(this);
+           text.setText(s);
+           tr.addView(text);
+           table.addView(tr);
+       }
 
-            fin.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-  
-    }
-
-    private void saveRankingFile(){
-        FileOutputStream fos = null;
-        try {
-            fos = openFileOutput(fichero, MODE_PRIVATE);
-            fos.write("ijbndidcbeiwf".getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally{
-            try {
-                fos.close();
-            }catch(IOException exc){}
-        }
-    }
+ */
+   }
 }
