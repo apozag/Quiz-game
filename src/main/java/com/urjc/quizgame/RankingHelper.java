@@ -31,8 +31,8 @@ public class RankingHelper {
         Record(String n, int p){name = n; points = p;}
         @Override
         public int compareTo(Record r) {
-            return points < r.points ? -1
-                    : points > r.points ? 1
+            return points < r.points ? 1
+                    : points > r.points ? -1
                     : 0;
         }
 
@@ -45,20 +45,15 @@ public class RankingHelper {
         if(records.isEmpty()){
             records.add(newRecord);
             return true;
-        }else if (records.size() < MAX_SIZE) {
-            for (int i = 0; i < records.size(); i++) {
-                if (records.get(i).points < newRecord.points) {
-                    records.add(i, newRecord);
-                    return true;
-                }
-            }
-            if(records.size() < MAX_SIZE){
+        }else {
+            if(getLower() < points){
                 records.add(0, newRecord);
+                if(records.size() > MAX_SIZE)
+                    removeLower();
                 return true;
             }
             return false;
         }
-        return false;
     }
     public String toString(){
         JSONObject obj = new JSONObject();
@@ -89,6 +84,24 @@ public class RankingHelper {
 
     public void sort(){
         Collections.sort(records);
+    }
+
+    public int getLower(){
+        int lower = 1000;
+        for(Record r : records){
+            if(r.points < lower)
+                lower = r.points;
+        }
+        return lower;
+    }
+    public void removeLower(){
+        int lower = 0;
+        for(int i = 1; i < records.size()-1; i++){
+            if(records.get(lower).points > records.get(i).points){
+                lower = i;
+            }
+        }
+        records.remove(lower);
     }
 /*
     public void readRankingFile(){
