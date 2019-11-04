@@ -77,6 +77,7 @@ public class ScoreActivity extends AppCompatActivity {
         }
 
         if(ranking.addIfIsRecord("pepe", Integer.parseInt(getIntent().getStringExtra("SCORE")))) {
+            ranking.sort();
             FileOutputStream fos;
             try {
                 fos = openFileOutput("ranking.txt", MODE_PRIVATE);

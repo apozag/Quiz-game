@@ -12,6 +12,7 @@ import java.io.DataInputStream;
 import java.io.InputStream;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,10 +25,17 @@ public class RankingHelper {
 
     public static int MAX_SIZE = 10;
 
-    public class Record{
+    public class Record implements Comparable<Record>{
         public String name;
         public int points;
         Record(String n, int p){name = n; points = p;}
+        @Override
+        public int compareTo(Record r) {
+            return points < r.points ? -1
+                    : points > r.points ? 1
+                    : 0;
+        }
+
     }
 
     static private List<Record> records = new ArrayList<>();
@@ -37,7 +45,7 @@ public class RankingHelper {
         if(records.isEmpty()){
             records.add(newRecord);
             return true;
-        }else {
+        }else if (records.size() < MAX_SIZE) {
             for (int i = 0; i < records.size(); i++) {
                 if (records.get(i).points < newRecord.points) {
                     records.add(i, newRecord);
@@ -50,6 +58,7 @@ public class RankingHelper {
             }
             return false;
         }
+        return false;
     }
     public String toString(){
         JSONObject obj = new JSONObject();
@@ -76,6 +85,10 @@ public class RankingHelper {
     }
     public void clear(){
         records.clear();
+    }
+
+    public void sort(){
+        Collections.sort(records);
     }
 /*
     public void readRankingFile(){
