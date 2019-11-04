@@ -25,10 +25,13 @@ public class RankingHelper {
 
     public static int MAX_SIZE = 10;
 
+
     public class Record implements Comparable<Record>{
         public String name;
         public int points;
         Record(String n, int p){name = n; points = p;}
+
+
         @Override
         public int compareTo(Record r) {
             return points < r.points ? 1
