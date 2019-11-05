@@ -28,6 +28,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Collections;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -66,7 +67,7 @@ public class GameActivity extends AppCompatActivity {
 
         //Music volume
         preferences = getSharedPreferences("MyPrefsFile", 0);
-        MAX_QUESTIONS = (preferences.getInt("difficulty", 1) +1)* 6;
+        MAX_QUESTIONS = (preferences.getInt("difficulty", 0) +1)* 6;
         currentVolume = (float) (1 - (Math.log(MAX_VOLUME - preferences.getInt("volume", 0)) / Math.log(MAX_VOLUME)));
         //Cronometro
         chronometer = findViewById(R.id.chronometer);
@@ -157,7 +158,7 @@ public class GameActivity extends AppCompatActivity {
                 }
                 else{
                     //Siguiente pregunta
-                    if(currentQuestion.getId() <= questions.size()-2 && currentQuestion.getId() <= MAX_QUESTIONS)
+                    if(currentIndex <= questions.size()-2 && currentIndex <= MAX_QUESTIONS)
                         changeQuestion ();
                     else{
                         stopChronometer();
@@ -172,7 +173,7 @@ public class GameActivity extends AppCompatActivity {
         });
 
 
-        changeQuestion(0);
+        changeQuestion();
     }
 
     private void changeQuestion(){
@@ -181,7 +182,7 @@ public class GameActivity extends AppCompatActivity {
 
         chooseBtn.setText("Choose");
 
-        currentQuestion = questions.get(currentIndex);
+        currentQuestion = questions.get(indexes[currentIndex]);
 
         radioGroup.clearCheck();
 

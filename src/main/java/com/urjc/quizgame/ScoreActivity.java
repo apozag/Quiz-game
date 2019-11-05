@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -90,7 +91,7 @@ public class ScoreActivity extends AppCompatActivity {
             TableRow tr2 = new TableRow(this);
             et = new EditText(this);
             TextView tex = new TextView(this);
-            tex.setText("¡Nuevo récord! Introduce tus iniciales")
+            tex.setText("¡Nuevo récord! Introduce tus iniciales");
             tr1.addView(tex);
             tr2.addView(et);
             table.addView(tr1);
