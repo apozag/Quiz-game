@@ -39,6 +39,7 @@ public class GameActivity extends AppCompatActivity {
 
     private int score;
     private int MAX_QUESTIONS;
+    private int numQuestion;
     private final static int MAX_VOLUME = 100;
     private float currentVolume;
     private int indexes[] = new int[MAX_VOLUME];
@@ -99,6 +100,7 @@ public class GameActivity extends AppCompatActivity {
         questionCount = findViewById(R.id.textQuestionCount);
         scoreText= findViewById(R.id.textScore);
         score = 0;
+        numQuestion = 1;
 
         chooseBtn = findViewById(R.id.chooseBtn);
         imageView = findViewById(R.id.imageView);
@@ -158,9 +160,10 @@ public class GameActivity extends AppCompatActivity {
                 }
                 else{
                     //Siguiente pregunta
-                    if(currentIndex <= questions.size()-2 && currentIndex <= MAX_QUESTIONS)
+                    if(currentIndex <= questions.size()-2 && currentIndex < MAX_QUESTIONS)
                         changeQuestion ();
                     else{
+                        stop();
                         stopChronometer();
                         Intent intent = new Intent(v.getContext(), ScoreActivity.class);
                         intent.putExtra("SCORE", score+"");
@@ -188,7 +191,9 @@ public class GameActivity extends AppCompatActivity {
 
         question.setText(currentQuestion.getQuestion());
 
-        questionCount.setText("Question " + (currentQuestion.getId() + 1) + "/" + questions.size());
+        questionCount.setText("Question " + numQuestion + "/" + MAX_QUESTIONS);
+
+        numQuestion++;
 
         Log.d("Debug", "imageId: " + currentQuestion.getImageId());
         Log.d("Debug", "audioId: " + currentQuestion.getMusicId());
@@ -250,8 +255,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void setFinalScore(){
-        if (MAX_QUESTIONS < seconds/MAX_QUESTIONS){
-            score *= MAX_QUESTIONS - seconds/MAX_QUESTIONS;
+        if (MAX_QUESTIONS > seconds/MAX_QUESTIONS){
+            score += MAX_QUESTIONS - seconds/MAX_QUESTIONS;
         }
     }
 
