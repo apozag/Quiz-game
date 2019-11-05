@@ -28,6 +28,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Collections;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -152,8 +153,8 @@ public class GameActivity extends AppCompatActivity {
                 }
                 else{
                     //Siguiente pregunta
-                    if(currentQuestion.getId() <= questions.size()-2 && currentQuestion.getId() <= MAX_QUESTIONS)
-                        changeQuestion (currentQuestion.getId() + 1);
+                    if(currentIndex <= questions.size()-2 && currentIndex <= MAX_QUESTIONS)
+                        changeQuestion ();
                     else{
                         stop();
                         stopChronometer();
@@ -168,7 +169,7 @@ public class GameActivity extends AppCompatActivity {
         });
 
 
-        changeQuestion(0);
+        changeQuestion();
     }
 
     private void changeQuestion(int pos){
@@ -177,7 +178,9 @@ public class GameActivity extends AppCompatActivity {
 
         chooseBtn.setText("Choose");
 
-        currentQuestion = questions.get(pos);
+
+        currentQuestion = questions.get(indexes[currentIndex]);
+
 
         radioGroup.clearCheck();
 
