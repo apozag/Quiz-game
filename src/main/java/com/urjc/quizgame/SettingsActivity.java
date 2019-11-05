@@ -14,7 +14,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private Spinner languageSpinner;
+    //private Spinner languageSpinner;
 
     SharedPreferences settings;
     SharedPreferences.Editor editor;
@@ -27,10 +27,10 @@ public class SettingsActivity extends AppCompatActivity {
         settings = getSharedPreferences("MyPrefsFile", 0);
         editor = settings.edit();
 
-        languageSpinner = (Spinner) findViewById(R.id.languageSpinner);
+        //languageSpinner = (Spinner) findViewById(R.id.languageSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.language_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        languageSpinner.setAdapter(adapter);
+        //languageSpinner.setAdapter(adapter);
 
         SeekBar difficulty = findViewById(R.id.difficultyBar);
         difficulty.setProgress(settings.getInt("difficulty", 0));
@@ -72,7 +72,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        Spinner language = findViewById(R.id.languageSpinner);
+        /*Spinner language = findViewById(R.id.languageSpinner);
         language.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -92,7 +92,7 @@ public class SettingsActivity extends AppCompatActivity {
 
             }
 
-        });
+        });*/
         findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v){
