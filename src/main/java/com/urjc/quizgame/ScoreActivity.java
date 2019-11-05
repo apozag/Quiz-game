@@ -80,14 +80,23 @@ public class ScoreActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        //Si entramos en el ranking
         if(Integer.parseInt(getIntent().getStringExtra("SCORE")) > ranking.getLower() || !ranking.isFull()) {
 
 
             //Pedimos nombre al usuario
             TableLayout table = findViewById(R.id.table);
+            TableRow tr1 = new TableRow(this);
+            TableRow tr2 = new TableRow(this);
             et = new EditText(this);
-            table.addView(et);
+            TextView tex = new TextView(this);
+            tex.setText("¡Nuevo récord! Introduce tus iniciales")
+            tr1.addView(tex);
+            tr2.addView(et);
+            table.addView(tr1);
+            table.addView(tr2);
 
+            //El botón guarda los datos antes de pasar de actividad
             menuBtn.setText("Guardar");
             menuBtn.setOnClickListener(new View.OnClickListener(){
                 @Override
