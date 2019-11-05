@@ -11,9 +11,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
+
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,8 +32,6 @@ public class ScoreActivity extends AppCompatActivity {
     TextView score;
 
     Button menuBtn;
-
-    EditText et;
 
     RankingHelper ranking = new RankingHelper();
 
@@ -80,6 +80,7 @@ public class ScoreActivity extends AppCompatActivity {
         } catch(JSONException e){
             e.printStackTrace();
         }
+
 
         //Si entramos en el ranking
         if(Integer.parseInt(getIntent().getStringExtra("SCORE")) > ranking.getLower() || !ranking.isFull()) {

@@ -53,11 +53,12 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         SeekBar volume = findViewById(R.id.volumeBar);
-        volume.setProgress(settings.getInt("volume", 0));
+        volume.setProgress(settings.getInt("volume", 5));
         volume.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 editor.putInt("volume", i);
+                editor.commit();
             }
 
             @Override
