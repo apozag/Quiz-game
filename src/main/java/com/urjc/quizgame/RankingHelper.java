@@ -34,8 +34,8 @@ public class RankingHelper {
 
         @Override
         public int compareTo(Record r) {
-            return points < r.points ? -1
-                    : points > r.points ? 1
+            return points < r.points ? 1
+                    : points > r.points ? -1
                     : 0;
         }
 
@@ -43,25 +43,15 @@ public class RankingHelper {
 
     static private List<Record> records = new ArrayList<>();
 
-    public boolean addIfIsRecord(String name, int points){
+    public void addIfIsRecord(String name, int points){
         Record newRecord = new Record(name, points);
         if(records.isEmpty()){
             records.add(newRecord);
-            return true;
-        }else if (records.size() < MAX_SIZE) {
-            for (int i = 0; i < records.size(); i++) {
-                if (records.get(i).points < newRecord.points) {
-                    records.add(i, newRecord);
-                    return true;
-                }
-            }
-            if(records.size() < MAX_SIZE){
-                records.add(0, newRecord);
-                return true;
-            }
-            return false;
+        }else {
+            records.add(newRecord);
+            if(records.size() > MAX_SIZE)
+                removeLower();
         }
-        return false;
     }
     public String toString(){
         JSONObject obj = new JSONObject();
@@ -77,7 +67,7 @@ public class RankingHelper {
         }catch(JSONException exc){
             Log.d("Error", exc.toString());
         }
-          return obj.toString();
+        return obj.toString();
     }
     public List<String> getLines(){
         List<String> list = new ArrayList<>();
@@ -92,6 +82,28 @@ public class RankingHelper {
 
     public void sort(){
         Collections.sort(records);
+    }
+
+    public int getLower(){
+        int lower = 1000;
+        for(Record r : records){
+            if(r.points < lower)
+                lower = r.points;
+        }
+        return lower;
+    }
+    public void removeLower(){
+        int lower = 0;
+        for(int i = 1; i < records.size()-1; i++){
+            if(records.get(lower).points > records.get(i).points){
+                lower = i;
+            }
+        }
+        records.remove(lower);
+    }
+
+    public boolean isFull(){
+        return records.size() >= MAX_SIZE;
     }
 /*
     public void readRankingFile(){
@@ -114,9 +126,7 @@ public class RankingHelper {
             e.printStackTrace();
         }
     }
-
     public void displayRankingToTable (TableLayout table){
-
        for(Record r : records){
            TableRow tr = new TableRow(this);
            TextView text = new TextView(this);
@@ -125,19 +135,15 @@ public class RankingHelper {
            table.addView(tr);
        }
     }
-
-
     public void saveRankingFile(){
         FileOutputStream fos = null;
         try {
             fos = openFileOutput(fichero, MODE_PRIVATE);
             fos.write(toString().getBytes());
             fos.close();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
  */
 }

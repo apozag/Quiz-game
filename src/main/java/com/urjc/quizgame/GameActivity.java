@@ -41,6 +41,8 @@ public class GameActivity extends AppCompatActivity {
     private int MAX_QUESTIONS;
     private final static int MAX_VOLUME = 100;
     private float currentVolume;
+    private int indexes[] = new int[MAX_VOLUME];
+    private int currentIndex = 0;
     private SharedPreferences preferences;
     private ArrayList<Question> questions = new ArrayList<>();
     private RadioGroup radioGroup;
@@ -72,6 +74,9 @@ public class GameActivity extends AppCompatActivity {
         startChronometer();
 
         readQuestions(getIntent().getStringExtra("MODE"));
+
+        //set question order
+        generateQuestionOrder();
 
         //COnfiguración RadioButtons
 
@@ -156,7 +161,6 @@ public class GameActivity extends AppCompatActivity {
                     if(currentIndex <= questions.size()-2 && currentIndex <= MAX_QUESTIONS)
                         changeQuestion ();
                     else{
-                        stop();
                         stopChronometer();
                         Intent intent = new Intent(v.getContext(), ScoreActivity.class);
                         intent.putExtra("SCORE", score+"");
@@ -172,15 +176,13 @@ public class GameActivity extends AppCompatActivity {
         changeQuestion();
     }
 
-    private void changeQuestion(int pos){
+    private void changeQuestion(){
 
         radioGroup.setEnabled(true);
 
         chooseBtn.setText("Choose");
 
-
         currentQuestion = questions.get(indexes[currentIndex]);
-
 
         radioGroup.clearCheck();
 
@@ -214,6 +216,8 @@ public class GameActivity extends AppCompatActivity {
         radioBtn2.setBackgroundColor(0x00000000);
         radioBtn3.setBackgroundColor(0x00000000);
         radioBtn4.setBackgroundColor(0x00000000);
+
+        currentIndex++;
     }
 
     //Crea un nuevo reproductor en caso de que no exista y lo reproduce
@@ -298,6 +302,17 @@ public class GameActivity extends AppCompatActivity {
         }
         catch(JSONException exc){
             Log.d("Error", exc.toString());
+        }
+    }
+
+    private void generateQuestionOrder(){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for(int i = 0; i < 20; i++){
+            list.add(new Integer(i));
+        }
+        Collections.shuffle(list);
+        for(int i = 0 ; i < MAX_QUESTIONS; i++){
+            indexes[i] = list.get(i);
         }
     }
 }
