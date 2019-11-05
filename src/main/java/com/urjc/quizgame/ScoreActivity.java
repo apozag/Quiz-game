@@ -11,8 +11,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TableLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,8 +27,6 @@ public class ScoreActivity extends AppCompatActivity {
     TextView score;
 
     Button menuBtn;
-
-    EditText et;
 
     RankingHelper ranking = new RankingHelper();
 
@@ -80,45 +76,19 @@ public class ScoreActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        //Si entramos en el ranking
-        if(Integer.parseInt(getIntent().getStringExtra("SCORE")) > ranking.getLower() || !ranking.isFull()) {
+        if(ranking.addIfIsRecord("pepe", Integer.parseInt(getIntent().getStringExtra("SCORE")))) {
+            ranking.sort();
+            FileOutputStream fos;
+            try {
+                fos = openFileOutput("ranking.txt", MODE_PRIVATE);
+                String s = ranking.toString();
+                Log.d("Debug", s);
+                fos.write(s.getBytes());
+                fos.close();
 
-
-            //Pedimos nombre al usuario
-            TableLayout table = findViewById(R.id.table);
-            TableRow tr1 = new TableRow(this);
-            TableRow tr2 = new TableRow(this);
-            et = new EditText(this);
-            TextView tex = new TextView(this);
-            tex.setText("¡Nuevo récord! Introduce tus iniciales")
-            tr1.addView(tex);
-            tr2.addView(et);
-            table.addView(tr1);
-            table.addView(tr2);
-
-            //El botón guarda los datos antes de pasar de actividad
-            menuBtn.setText("Guardar");
-            menuBtn.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    ranking.addIfIsRecord(et.getText().toString(), Integer.parseInt(getIntent().getStringExtra("SCORE")));
-                    ranking.sort();
-                    FileOutputStream fos;
-                    try {
-                        fos = openFileOutput("ranking.txt", MODE_PRIVATE);
-                        String s = ranking.toString();
-                        Log.d("Debug", s);
-                        fos.write(s.getBytes());
-                        fos.close();
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    Intent intent = new Intent(v.getContext(), MainActivity.class);
-                    startActivity(intent);
-                }
-            });
-
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

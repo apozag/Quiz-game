@@ -60,7 +60,7 @@ public class RankingActivity extends AppCompatActivity {
                JSONObject jo = array.getJSONObject(i);
                TableRow tr = new TableRow(this);
                TextView text = new TextView(this);
-               text.setText(jo.getString("name") + "\t\t\t"  +  jo.getInt("points"));
+               text.setText(jo.getString("name") + jo.getInt("points"));
                tr.addView(text);
                table.addView(tr);
            }
